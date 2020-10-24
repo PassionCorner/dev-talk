@@ -73,4 +73,5 @@ Developing Dashboard
 [x] Create Post
 [x] Read Post
 [x] Format Time
-[] Implement Comments
+[x] Implement Comments
+[] Like Posts
