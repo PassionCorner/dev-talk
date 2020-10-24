@@ -22,7 +22,7 @@
             <p>{{ post.content | trimLength }}</p>
             <ul>
               <li>
-                <a>comments {{ post.comments }}</a>
+                <a @click="toggleCommentModal(post)">comments {{ post.comments }}</a>
               </li>
               <li>
                 <a>likes {{ post.likes }}</a>
