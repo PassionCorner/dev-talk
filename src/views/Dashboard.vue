@@ -28,7 +28,7 @@
                 <a @click="toggleCommentModal(post)">comments {{ post.comments }}</a>
               </li>
               <li>
-                <a>likes {{ post.likes }}</a>
+                <a @click="likePost(post.id, post.likes)">likes {{ post.likes }}</a>
               </li>
               <li><a>view full post</a></li>
             </ul>
@@ -66,6 +66,9 @@ export default {
     createPost() {
       this.$store.dispatch("createPost", { content: this.post.content })
       this.post.content = ""
+    },
+    likePost(id, likesCount) {
+      this.$store.dispatch("likePost", { id, likesCount })
     },
     toggleCommentModal(post) {
       this.showCommentModal = !this.showCommentModal
