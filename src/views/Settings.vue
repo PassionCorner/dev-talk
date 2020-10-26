@@ -37,7 +37,20 @@ export default {
   },
   methods: {
     updateProfile() {
-      // logic goes here
+      //calling athe action and pass the payload
+      this.$store.dispatch("updateProfile", {
+        name: this.name !== "" ? this.name : this.userProfile.name,
+        title: this.title !== "" ? this.title : this.userProfile.title
+      })
+      // clear the fields
+      this.name = ""
+      this.title = ""
+      // show the success msg
+      this.showSuccess = true
+      // hide the success msg after 2 sec
+      setTimeout(() => {
+        this.showSuccess = false
+      }, 2000)
     }
   }
 }
